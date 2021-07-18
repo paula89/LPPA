@@ -19,14 +19,19 @@ inputs.forEach(input => {
 	input.addEventListener("blur", remcl);
 });
 
-function validateInputs(usuario, password){
-	usuario || password === '' ? true : false;
+function validateInputs(usuario, password) {
+	// db + privilegios
+	//usuario || password === '' ? false : validar contra la db
+	//let response = llamar loginDB(usuario, contraseña);
+	//	response === 0 ? errorEnPantalla : 'users.html'
 }
+
 
 function login(){
 	let usuario = document.getElementById('usuario').value;
 	let password = document.getElementById('password').value;
 	console.log(usuario + password)
 
-	validateInputs(usuario, password) ? location.href = 'login.html': "error";
+	// redirige a la pantalla principal 
+	window.location.href = './users.html';
 }
