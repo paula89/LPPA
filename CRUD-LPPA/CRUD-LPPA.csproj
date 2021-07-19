@@ -106,7 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="addUserFormAdmin.aspx" />
+    <Content Include="addUserForm.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -168,6 +168,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="seeUsersForm.aspx" />
+    <Content Include="seeUsersFormAdmin.aspx" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -175,12 +176,12 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="addUserFormAdmin.aspx.cs">
-      <DependentUpon>addUserFormAdmin.aspx</DependentUpon>
+    <Compile Include="addUserForm.aspx.cs">
+      <DependentUpon>addUserForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="addUserFormAdmin.aspx.designer.cs">
-      <DependentUpon>addUserFormAdmin.aspx</DependentUpon>
+    <Compile Include="addUserForm.aspx.designer.cs">
+      <DependentUpon>addUserForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
@@ -243,6 +244,13 @@
     </Compile>
     <Compile Include="seeUsersForm.aspx.designer.cs">
       <DependentUpon>seeUsersForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="seeUsersFormAdmin.aspx.cs">
+      <DependentUpon>seeUsersFormAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="seeUsersFormAdmin.aspx.designer.cs">
+      <DependentUpon>seeUsersFormAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

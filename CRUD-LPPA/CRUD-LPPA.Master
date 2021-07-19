@@ -28,8 +28,8 @@
                         <div class="sidebar-heading">USUARIO</div>
                         <div class="list-group list-group-flush">
                             <a runat="server" href="~/Default" class="list-group-item list-group-item-action ">Inicio</a>
-                            <a runat="server" href="~/seeUsersForm" class="list-group-item list-group-item-action ">Users</a>
-                            <a runat="server" href="~/ManageUsersForm" class="list-group-item list-group-item-action ">Para Test</a>
+                            <a runat="server" href="~/seeUsersFormAdmin" class="list-group-item list-group-item-action ">Users</a>
+                            <a runat="server" href="~/manageUsersForm" class="list-group-item list-group-item-action ">Para Test</a>
                             <a runat="server" href="~/privilegesForm" class="list-group-item list-group-item-action">Privilegios</a>
                         </div>
 
