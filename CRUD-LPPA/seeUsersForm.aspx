@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CRUD-LPPA.Master" AutoEventWireup="true" CodeBehind="seeUsersForm.aspx.cs" Inherits="CRUD_LPPA.seeUsersForm" %>
+﻿<%@ Page Title="Users" Language="C#" MasterPageFile="~/CRUD-LPPA.Master" AutoEventWireup="true" CodeBehind="seeUsersForm.aspx.cs" Inherits="CRUD_LPPA.seeUsersForm" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     
     <link rel="stylesheet" type="text/css" href="./Content/styleUsersForm.css">

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CRUD-LPPA.Master" AutoEventWireup="true" CodeBehind="manageUsersForm.aspx.cs" Inherits="CRUD_LPPA.manageUsersForm" %>
+﻿<%@ Page Title="Users" Language="C#" MasterPageFile="~/CRUD-LPPA.Master" AutoEventWireup="true" CodeBehind="manageUsersForm.aspx.cs" Inherits="CRUD_LPPA.manageUsersForm" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
 	

@@ -1,8 +1,3 @@
-function modificarPrivilegio(){
-
-}
-
-
 
 function addRow(){
     document.getElementById('list').innerHTML += 
@@ -24,4 +19,40 @@ function addRow(){
   </ul>  
 `
 
+}
+
+let localURL = 'http://localhost:8000/privileges'
+
+async function retrieveALL() {
+    let response = await fetch(localURL, {
+        headers: '{{key:"' + localStorage.getItem("key") + '"}}'
+
+    })
+    let returnedData = response.json();
+}
+
+async function createPrivilege(privilegeID, description) {
+    let response = await fetch(localURL + "/" + privilegeID, {
+        method: 'POST', //aclaro para que quede ordenado
+        headers: '{{key:"' + localStorage.getItem("key") + '"}}',
+        body: description // a definir
+    })
+    let returnedData = response.json();
+}
+
+async function modifyPrivilege(privilegeID, description) {
+    let response = await fetch(localURL + "/" + privilegeID, {
+        method: 'PUT', //aclaro para que quede ordenado
+        headers: '{{key:"' + localStorage.getItem("key") + '"}}',
+        body: description // a definir
+    })
+    let returnedData = response.json();
+}
+
+async function deletePrivilege(privilegeID) {
+    let response = await fetch(localURL + "/" + privilegeID, {
+        method: 'DELETE', //aclaro para que quede ordenado
+        headers: '{{key:"' + localStorage.getItem("key") + '"}}',
+    })
+    let returnedData = response.json();
 }

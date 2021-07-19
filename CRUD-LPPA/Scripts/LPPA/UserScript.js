@@ -9,7 +9,7 @@ async function retrieveAll() {
 }
 
 async function retrieveOne(userID) {
-    let response = await fetch(localURL+userID,{
+    let response = await fetch(localURL+"/"+userID,{
         headers: '{{key:"'+localStorage.getItem("key")+'"}}'
         
     })
@@ -17,7 +17,7 @@ async function retrieveOne(userID) {
 }
 
 async function createUser(userID,userdata) {
-    let response = await fetch(localURL+userID,{
+    let response = await fetch(localURL + "/" +userID,{
         method: 'POST', //aclaro para que quede ordenado
         headers: '{{key:"'+localStorage.getItem("key")+'"}}',
         body: userdata // a definir
@@ -26,7 +26,7 @@ async function createUser(userID,userdata) {
 }
 
 async function modifyUser(userID, userdata) {
-    let response = await fetch(localURL+userID,{
+    let response = await fetch(localURL + "/" +userID,{
         method: 'PUT', //aclaro para que quede ordenado
         headers: '{{key:"'+localStorage.getItem("key")+'"}}',
         body: userdata // a definir
@@ -35,7 +35,7 @@ async function modifyUser(userID, userdata) {
 }
 
 async function deleteUser(key,userID) {
-    let response = await fetch(localURL+userID,{
+    let response = await fetch(localURL + "/" +userID,{
         method: 'DELETE', //aclaro para que quede ordenado
         headers: '{{key:"'+localStorage.getItem("key")+'"}}',
     })
