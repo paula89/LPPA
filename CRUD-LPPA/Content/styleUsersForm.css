@@ -8,6 +8,10 @@ body {
 	padding: 10px;
 }
 
+i:hover{
+	color: #38d39f;
+}
+
 .list ul:nth-child(odd) {
   background-color:#ddd;
 }
