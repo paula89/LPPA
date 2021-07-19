@@ -1,15 +1,9 @@
-body {
-  background-color:#eee;
-  color:#999;
-  font-family: 'Poppins', sans-serif;
-  position: absolute;
-	left: 30%;
-	top: 20%;
-	padding: 10px;
-}
-
-i:hover{
-	color: #38d39f;
+#bodySimulado {
+    background-color: #eee;
+    color: #999;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
 }
 
 .list ul:nth-child(odd) {

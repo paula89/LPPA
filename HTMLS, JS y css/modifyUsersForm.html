@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Usuarios</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+	<link rel="stylesheet" type="text/css" href="./Content/styleManageUsers.css"
+		th:href="@{/css/user-form.css}">
+
+	<script type="text/javascript" src="./Scripts/LPPA/UserScript.js"></script>
+
+</head>
+<body>
+	<div class="container">		
+				<div class="card">
+					<div class="card-header">
+						<h4>Información del usuario</h4>
+					</div>
+					<div class="card-body">
+						<form class="form" role="form" autocomplete="off">
+							<div class="form-group row">
+								<label class="col-lg-3 col-form-label form-control-label">Nombre</label>
+								<div class="col-lg-9">
+									<input class="form-control" type="text" value="Paula">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-lg-3 col-form-label form-control-label">Apellido</label>
+								<div class="col-lg-9">
+									<input class="form-control" type="text" value="Riveros">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-lg-3 col-form-label form-control-label">Email</label>
+								<div class="col-lg-9">
+									<input class="form-control" type="email" value="paula@email.com">
+								</div>
+							</div>
+                            <div class="form-group row">
+								<label class="col-lg-3 col-form-label form-control-label">Dirección</label>
+								<div class="col-lg-9">
+									<input class="form-control" type="text" value="direccion 123">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-lg-3 col-form-label form-control-label">Privilegios</label>
+								<div class="col-lg-9">
+									<input class="form-control" type="text" value="admin">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-lg-3 col-form-label form-control-label">Contraseña</label>
+								<div class="col-lg-9">
+									<input class="form-control" type="password">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-lg-3 col-form-label form-control-label">Confirme la contraseña</label>
+								<div class="col-lg-9">
+									<input class="form-control" type="password">
+								</div>
+							</div>
+							<div class="form-group row">
+								<span>*Si no desea cambiar la contraseña, deje el campo Contraseña y Cambiar contraseña en blanco </span>
+							</div>
+							<div class="form-group row">
+								<div class="col-lg-12 text-center">
+									<input type="reset" class="btn btn-secondary" value="Cancelar" onclick="">
+									<input type="button" class="btn btn-primary" value="Guardar" onclick="modify()">
+									<input type="button" class="btn btn-warning" value="Eliminar" onclick=" return confirm('¿Desea eliminar el usuario seleccionado?')">
+								</div>							
+								
+							</div>
+								
+								
+
+
+						</form>
+					</div>
+				</div>
+            </div>
+</body>
+</html>

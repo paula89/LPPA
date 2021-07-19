@@ -1,10 +1,14 @@
 .main-section{
-    margin:0 auto;
-    margin-top:5%;
+    
+    
+    height:100%;
 }
 .card{
 	opacity: .95;
-    margin-top: 15%;
+    margin-top: 5%;
+    width: 80%;
+    align-content:center;
+    
 }
 .card-body{
     background-color: #38d39f;
@@ -13,4 +17,12 @@
 
 label{
 	font-weight: bold;
+}
+
+.nav-tabs .nav-item a:not(.active){
+	background-color: #38d39f;
+}
+
+.nav-tabs{
+	border-bottom:0px;
 }

@@ -43,10 +43,3 @@ async function deleteUser(key,userID) {
 }
 
 
-function modify(){
-
-}
-
-function eliminar(){
-    
-}

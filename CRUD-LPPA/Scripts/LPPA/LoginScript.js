@@ -12,7 +12,8 @@ async function login(userName, password) {
     }
     else{
         localStorage.setItem("token",returnedData["key"])
-        localStorage.setItem("timeStamp",returnedData["timestamp"])
+        localStorage.setItem("timeStamp", returnedData["timestamp"])
+        localStorage.setItem("privileges", returnedData["permisos"]["codigo"])
     }
 
 

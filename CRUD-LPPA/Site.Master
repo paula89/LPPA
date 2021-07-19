@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="CRUD_LPPA.SiteMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="CRUD_LPPA.SiteMaster" %>
 
 <!DOCTYPE html>
 
@@ -38,7 +38,7 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar navbar-nav navbar-fixed-left" Orientation="Horizontal">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -51,12 +51,26 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
+                        <li><a runat="server" href="~/Privileges">Privileges</a></li>
+                        <li><a runat="server" href="~/Users">Users</a></li>
                     </ul>
                 </div>
             </div>
         </div>
+
+<%--        <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
+                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
+                        <asp:MenuItem NavigateUrl="#" Text="Buy">
+                            <asp:MenuItem NavigateUrl="http://www.yahoo.com" Text = "Buy at yahoo"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="http://www.google.com" Text = "Buy at Google"></asp:MenuItem>
+
+                        </asp:MenuItem>
+                        
+                    </Items>
+                </asp:Menu>--%>
+
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>

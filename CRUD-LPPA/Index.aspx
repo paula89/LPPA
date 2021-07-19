@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <title>LPPA</title>
-    <link rel="stylesheet" type="text/css" href="/Content/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/Content/styleLogin.css"/>
     <script src="https://kit.fontawesome.com/a81368914c.js"></script>
 </head>
 <body>
@@ -20,8 +20,7 @@
            		   </div>
            		   <div class="div">
            		   		<h5>Usuario</h5>
-           		   		<input id="usuario" type="text" class="input"
-                        required oninvalid="this.setCustomValidity('Debe ingresar su nombre de usuario')" oninput="this.setCustomValidity('')"/>
+           		   		<input id="usuario" type="text" class="input"/>
            		   </div>
            		</div>
            		<div class="input-div pass">
@@ -30,8 +29,7 @@
            		   </div>
            		   <div class="div">
            		    	<h5>Contraseña</h5>
-           		    	<input id="password" type="password" class="input"
-						required oninvalid="this.setCustomValidity('Debe ingresar su contraseña')" oninput="this.setCustomValidity('')"/>
+           		    	<input id="password" type="password" class="input"/>
             	   </div>
             	</div>
             	<a href="#">¿Olvidó su contraseña?</a>
