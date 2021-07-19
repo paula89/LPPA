@@ -1,3 +1,4 @@
+
 const inputs = document.querySelectorAll(".input");
 
 
@@ -30,7 +31,7 @@ function login(){
 	let usuario = document.getElementById('usuario').value;
 	let password = document.getElementById('password').value;
 	console.log(usuario + password)
-
 	// redirige a la pantalla principal 
-	window.location.href = './users.html';
+	window.location.href = '/users.html';
 }
+

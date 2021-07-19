@@ -30,7 +30,7 @@
            		   </div>
            		   <div class="div">
            		    	<h5>Contraseña</h5>
-           		    	<input id="password" type="password" class="input" required=true oninvalid="this.setCustomValidity('Debe ingresar su contraseña')" oninput="this.setCustomValidity('')"/>
+           		    	<input id="password" type="password" class="input" required oninvalid="this.setCustomValidity('Debe ingresar su contraseña')" oninput="this.setCustomValidity('')"/>
             	   </div>
             	</div>
             	<a href="#">¿Olvidó su contraseña?</a>
