@@ -19,6 +19,11 @@ body {
     background: none;
 }
 
+a:hover {
+    cursor: pointer;
+}
+
+
     #sidebar-wrapper .sidebar-heading {
         padding: 1.26rem 1.26rem;
         margin-top: 1.26rem;

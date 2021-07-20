@@ -34,7 +34,7 @@
             	   </div>
             	</div>
             	<a href="#">¿Olvidó su contraseña?</a>
-            	<input type="submit" class="btn" value="Login" onclick="location.replace('https://localhost:44392/Default.aspx'); enableAccess(); return false;"/>
+            	<input type="submit" class="btn" value="Login" onclick="location.replace('Default.aspx?user='+document.getElementById('usuario').value);  return false;"/>
             </form>
         </div>
     <script type="text/javascript" src="\Scripts\LPPA\LoginScript.js"></script>

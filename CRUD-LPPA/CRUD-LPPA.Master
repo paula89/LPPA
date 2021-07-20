@@ -26,12 +26,12 @@
             <div class="col-sm-2" id="leftCol">
                 <div class="d-flex" id="wrapper">
                     <div id="sidebar-wrapper">
-                        <div class="sidebar-heading" id="userTitle">USUARIO</div>
+                        <div runat="server" class="sidebar-heading" id="userTitle">USUARIO</div>
                         <div class="list-group list-group-flush">
-                            <a runat="server" href="~/Default" class="list-group-item list-group-item-action">Inicio</a>
-                            <a runat="server" id="User" href="~/seeUsersForm"  class="list-group-item list-group-item-action" >Users</a>
-                            <a runat="server" id="Admin" href="~/seeUsersFormAdmin" class="list-group-item list-group-item-action" >Users</a>
-                            <a runat="server" id="SuperAdmin" href="~/privilegesForm" class="list-group-item list-group-item-action" >Privilegios</a>
+                            <a runat="server" onclick="location.replace('Default.aspx?user='+document.getElementById('userTitle').innerHTML); return false;" class="list-group-item list-group-item-action">Inicio</a>
+                            <a runat="server" id="User" onclick="location.replace('seeUsersForm.aspx?user='+document.getElementById('userTitle').innerHTML);  return false;" class="list-group-item list-group-item-action" >Users</a>
+                            <a runat="server" id="Admin" onclick="location.replace('seeUsersFormAdmin.aspx?user='+document.getElementById('userTitle').innerHTML); return false;" class="list-group-item list-group-item-action" >Users</a>
+                            <a runat="server" id="SuperAdmin" onclick="location.replace('privilegesForm.aspx?user='+document.getElementById('userTitle').innerHTML);  return false;" class="list-group-item list-group-item-action" >Privilegios</a>
                         </div>
 
                         <button type="button" class="btn btn-md" id="LogoutBtn" onclick="logout();">Logout</button>

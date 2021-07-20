@@ -9,11 +9,42 @@ namespace CRUD_LPPA
 {
     public partial class CRUD_LPPA : System.Web.UI.MasterPage
     {
+        string x = "";
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            User.Visible = false;
-            Admin.Visible = false;
-            SuperAdmin.Visible = false;
+            
+            if (Request.QueryString["user"] == "")
+            {
+              
+            }
+            else {
+                if (x == "")
+                {
+                    x = Request.QueryString["user"];
+                
+                if (x == Request.QueryString["user"])
+                {
+                    x = Request.QueryString["user"];
+                }
+                }
+            }
+            userTitle.InnerText = x;
+
+            //Intento de enmascarar
+            //string url = Request.Url.ToString();  
+            //Response.Write(a);
+            //string[] strValues = url.Split(new string[] { "?" }, StringSplitOptions.RemoveEmptyEntries);
+            
+            
+            User.Visible = true;
+            Admin.Visible = true;
+            SuperAdmin.Visible = true;
+            
         }
+
+
+        
     }
 }

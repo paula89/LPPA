@@ -14,7 +14,10 @@ namespace CRUD_LPPA
 
         }
 
+        static void agarrarUser()
+        {
 
-        
+        }
+
     }
 }
