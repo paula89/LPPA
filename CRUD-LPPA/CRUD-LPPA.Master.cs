@@ -11,7 +11,9 @@ namespace CRUD_LPPA
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            User.Visible = false;
+            Admin.Visible = false;
+            SuperAdmin.Visible = false;
         }
     }
 }

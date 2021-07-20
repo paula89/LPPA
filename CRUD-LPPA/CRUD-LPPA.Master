@@ -13,24 +13,25 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="\Scripts\jquery-3.4.1.min.js"></script>
 <script src="\Scripts\bootstrap.min.js"></script>
+<script type="text/javascript" src="\Scripts\LPPA\LoginScript.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <link href="\Content\MasterStyle.css" rel="stylesheet" />
 
 
 </head>
-<body>
+<body onload="enableAccess()">
 <form runat="server">
     <div class="container" id="FullPage">
         <div class="row">
             <div class="col-sm-2" id="leftCol">
                 <div class="d-flex" id="wrapper">
                     <div id="sidebar-wrapper">
-                        <div class="sidebar-heading">USUARIO</div>
+                        <div class="sidebar-heading" id="userTitle">USUARIO</div>
                         <div class="list-group list-group-flush">
-                            <a runat="server" href="~/Default" class="list-group-item list-group-item-action ">Inicio</a>
-                            <a runat="server" href="~/addUserForm" class="list-group-item list-group-item-action ">Users</a>
-                            <a runat="server" href="~/manageUsersForm" class="list-group-item list-group-item-action ">Para Test</a>
-                            <a runat="server" href="~/privilegesForm" class="list-group-item list-group-item-action">Privilegios</a>
+                            <a runat="server" href="~/Default" class="list-group-item list-group-item-action">Inicio</a>
+                            <a runat="server" id="User" href="~/seeUsersForm"  class="list-group-item list-group-item-action" >Users</a>
+                            <a runat="server" id="Admin" href="~/seeUsersFormAdmin" class="list-group-item list-group-item-action" >Users</a>
+                            <a runat="server" id="SuperAdmin" href="~/privilegesForm" class="list-group-item list-group-item-action" >Privilegios</a>
                         </div>
 
                         <button type="button" class="btn btn-md" id="LogoutBtn" onclick="logout();">Logout</button>
@@ -51,6 +52,6 @@
     </div>
 </form>
 
-    <script type="text/javascript" src="\Scripts\LPPA\LoginScript.js"></script>
+    
 </body>
 </html>

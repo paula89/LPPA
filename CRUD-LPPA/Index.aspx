@@ -34,10 +34,10 @@
             	   </div>
             	</div>
             	<a href="#">¿Olvidó su contraseña?</a>
-            	<input type="submit" class="btn" value="Login" onclick="location.replace('https://localhost:44392/Default.aspx'); return false;"/>
+            	<input type="submit" class="btn" value="Login" onclick="location.replace('https://localhost:44392/Default.aspx'); enableAccess(); return false;"/>
             </form>
         </div>
-    <script type="text/javascript" src="\Scripts\LPPA\main.js"></script>
+    <script type="text/javascript" src="\Scripts\LPPA\LoginScript.js"></script>
    
 </body>
 </html>

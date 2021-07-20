@@ -117,6 +117,7 @@
     <Content Include="Content\style.css" />
     <Content Include="Content\styleLogin.css" />
     <Content Include="Content\styleManageUsers.css" />
+    <Content Include="Content\StyleDefault.css" />
     <Content Include="Content\styleUsersForm.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />

@@ -1,40 +1,41 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/CRUD-LPPA.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="CRUD_LPPA._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    
+    <link rel="stylesheet" type="text/css" href="/Content/StyleDefault.css"/>
 
     <div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+        <h1>Bienvenido</h1>
+        <p class="lead">A la pagina de inicio de nuestro sistema de CRUD de usuarios y privilegios para el trabajo practico grupal de LPPA</p>
     </div>
 
     <div class="row">
         <div class="col-md-4">
-            <h2>Getting started</h2>
+            <h2>Introducción</h2>
             <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
+                En el menu de la izquierda tendra los accesos a las diferentes pantallas de la web y al final tienes el boton de logout para cerrar la session de tu cuenta.
+                Si quieres aprender mas sobre el uso de la web haga click en el boton debajo para acceder al manual.
             </p>
             <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>
-                NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
+                <a class="btn btn-default" href="#">Manual &raquo;</a>
             </p>
         </div>
         <div class="col-md-4">
-            <h2>Web Hosting</h2>
+            <h2>Documentación</h2>
             <p>
-                You can easily find a web hosting company that offers the right mix of features and price for your applications.
+                Si tienes interes en el desarrollo de esta web te dejo la documentación aqui abajo.
             </p>
             <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
+                <a class="btn btn-default" href="#">Documentación &raquo;</a>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h2>Contactos</h2>
+            <p>
+                Para mas informacion no dudes en contactarnos...
+            </p>
+            <p>
+                <a class="btn btn-default" href="#">Contactanos &raquo;</a>
             </p>
         </div>
     </div>

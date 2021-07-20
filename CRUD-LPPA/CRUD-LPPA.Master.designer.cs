@@ -15,6 +15,33 @@ namespace CRUD_LPPA
     {
 
         /// <summary>
+        /// User control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor User;
+
+        /// <summary>
+        /// Admin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor Admin;
+
+        /// <summary>
+        /// SuperAdmin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor SuperAdmin;
+
+        /// <summary>
         /// MainContent control.
         /// </summary>
         /// <remarks>
