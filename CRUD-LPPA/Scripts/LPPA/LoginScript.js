@@ -80,29 +80,3 @@ function login() {
     }
 }
 
-
-function enableAccess() {
-    let max = 2;
-    //let x = Array.from(localStorage.getItem('privileges'))
-    //for (char in x) {
-    //    if (char > max) {
-    //        max = char;
-    //    } 
-    //}
-
-    switch (max) {
-        case 0:
-            
-            document.getElementById('Admin').hidden = true
-            document.getElementById('SuperAdmin').hidden = true
-            break;
-        case 2:
-            document.getElementById('User').hidden = true
-            document.getElementById('SuperAdmin').hidden = true
-            break;
-        case 3:
-            document.getElementById('Admin').hidden = true
-            document.getElementById('User').hidden = true
-            break;
-    }
-}

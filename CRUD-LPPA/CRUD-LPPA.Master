@@ -16,6 +16,7 @@
 <script type="text/javascript" src="\Scripts\LPPA\LoginScript.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <link href="\Content\MasterStyle.css" rel="stylesheet" />
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
 </head>

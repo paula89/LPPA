@@ -2,6 +2,24 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <link rel="stylesheet" type="text/css" href="/Content/styleUsersForm.css">
+    <script type="text/javascript" src="\Scripts\LPPA\ForTests.js"></script>
+
+    <table class="table table-striped" id="usersTable" onload="TestTable()">
+        <thread>
+            <tr id="usersAtributes">
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Email</th>
+                <th scope="col">Direccion</th>
+                <th scope="col">Privilegios</th>
+                <th scope="col">Acción</th>
+            </tr>
+        </thread>
+        <tbody>
+        </tbody>
+    </table>
+
 
     <div class="list">
   <ul>
@@ -19,7 +37,7 @@
     <li data-label="Direccion">direccion 124</li>
     <li data-label="Privilegios">Admin</li>
     <li data-label="Acción">
-      <i class="fas fa-edit" onclick="location.replace('https://localhost:44392/modifyUsersForm.aspx'); return false;"></i>
+      <i class="fas fa-edit" onclick="location.replace('modifyUsersForm.aspx?user='+document.getElementById('userTitle').innerHTML); return false;"></i>
     </li>
   </ul>
   <ul>
@@ -29,7 +47,7 @@
     <li data-label="Direccion">direccion 124</li>
     <li data-label="Privilegios">read</li>
     <li data-label="Acción">
-      <i class="fas fa-edit" onclick="location.replace('https://localhost:44392/modifyUsersForm.aspx'); return false;"></i>
+      <i class="fas fa-edit" onclick="location.replace('modifyUsersForm.aspx?user='+document.getElementById('userTitle').innerHTML); return false;"></i>
     </li>
   </ul>
   <ul>
@@ -39,7 +57,7 @@
     <li data-label="Direccion">direccion 124</li>
     <li data-label="Privilegios">read</li>
     <li data-label="Acción">
-      <i class="fas fa-edit" onclick="location.replace('https://localhost:44392/modifyUsersForm.aspx'); return false;"></i>
+      <i class="fas fa-edit" onclick="location.replace('modifyUsersForm.aspx?user='+document.getElementById('userTitle').innerHTML); return false;"></i>
     </li>
   </ul>
   
@@ -47,7 +65,13 @@
 
 <div class="form-group row">
   <div class="col-lg-3 text-center">
-    <input type="button" class="btn btn-warning" value="Nuevo Usuario"  onclick="location.replace('https://localhost:44392/addUsersForm.aspx'); return false;">
+    <input type="button" class="btn btn-warning" value="Nuevo Usuario"  onclick="location.replace('addUserForm.aspx?user='+document.getElementById('userTitle').innerHTML); return false;">
+  </div>
+</div>
+
+<div class="form-group row">
+  <div class="col-lg-3 text-center">
+    <input type="button" class="btn btn-warning" value=" Usuario"  onclick="TestTable(); return false;">
   </div>
 </div>
 

@@ -9,9 +9,27 @@ namespace CRUD_LPPA
 {
     public partial class manageUsersForm : System.Web.UI.Page
     {
+        string x = "";
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Request.QueryString["userID"] == "")
+            {
 
+            }
+            else
+            {
+                if (x == "")
+                {
+                    x = Request.QueryString["userID"];
+
+                    if (x == Request.QueryString["userID"])
+                    {
+                        x = Request.QueryString["userID"];
+                    }
+                }
+            }
+
+            usrID.Value = x;
         }
     }
 }

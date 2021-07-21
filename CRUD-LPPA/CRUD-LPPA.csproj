@@ -142,9 +142,11 @@
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\LPPA\ForTests.js" />
     <Content Include="Scripts\LPPA\LoginScript.js" />
     <Content Include="Scripts\LPPA\main.js" />
     <Content Include="Scripts\LPPA\PrivilegesScript.js" />
+    <Content Include="Scripts\LPPA\Table.js" />
     <Content Include="Scripts\LPPA\UserScript.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
