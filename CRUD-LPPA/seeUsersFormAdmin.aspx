@@ -4,7 +4,8 @@
     <link rel="stylesheet" type="text/css" href="/Content/styleUsersForm.css">
     <script type="text/javascript" src="\Scripts\LPPA\ForTests.js"></script>
 
-    <table class="table table-striped" id="usersTable" onload="TestTable()">
+    <div class="container">
+    <table class="table table-striped" id="usersTable">
         <thread>
             <tr id="usersAtributes">
                 <th scope="col">ID</th>
@@ -16,63 +17,20 @@
                 <th scope="col">Acción</th>
             </tr>
         </thread>
-        <tbody>
+        <tbody id="rowContent">
         </tbody>
     </table>
 
+        <div class="form-group row">
+          <div class="col-lg-3 text-center">
+            <input type="button" class="btn btn-warning" value="Nuevo Usuario"  onclick="location.replace('addUserForm.aspx?user='+document.getElementById('userTitle').innerHTML); return false;">
+          </div>
+        </div>
 
-    <div class="list">
-  <ul>
-    <li>Nombre</li>
-    <li>Apellido</li>
-    <li>Email</li>
-    <li>Direccion</li>
-    <li>Privilegios</li>
-    <li>Acción</li>
-  </ul>
-  <ul>
-    <li data-label="nombre">Paula</li>
-    <li data-label="apellido">Riveros</li>
-    <li data-label="Email">paula@email.com</li>
-    <li data-label="Direccion">direccion 124</li>
-    <li data-label="Privilegios">Admin</li>
-    <li data-label="Acción">
-      <i class="fas fa-edit" onclick="location.replace('modifyUsersForm.aspx?user='+document.getElementById('userTitle').innerHTML); return false;"></i>
-    </li>
-  </ul>
-  <ul>
-    <li data-label="nombre">Juan</li>
-    <li data-label="apellido">Flores</li>
-    <li data-label="Email">juan@email.com</li>
-    <li data-label="Direccion">direccion 124</li>
-    <li data-label="Privilegios">read</li>
-    <li data-label="Acción">
-      <i class="fas fa-edit" onclick="location.replace('modifyUsersForm.aspx?user='+document.getElementById('userTitle').innerHTML); return false;"></i>
-    </li>
-  </ul>
-  <ul>
-    <li data-label="nombre">Ariel</li>
-    <li data-label="apellido">Tolava</li>
-    <li data-label="Email">ariel@email.com</li>
-    <li data-label="Direccion">direccion 124</li>
-    <li data-label="Privilegios">read</li>
-    <li data-label="Acción">
-      <i class="fas fa-edit" onclick="location.replace('modifyUsersForm.aspx?user='+document.getElementById('userTitle').innerHTML); return false;"></i>
-    </li>
-  </ul>
-  
-</div>
-
-<div class="form-group row">
-  <div class="col-lg-3 text-center">
-    <input type="button" class="btn btn-warning" value="Nuevo Usuario"  onclick="location.replace('addUserForm.aspx?user='+document.getElementById('userTitle').innerHTML); return false;">
-  </div>
-</div>
-
-<div class="form-group row">
-  <div class="col-lg-3 text-center">
-    <input type="button" class="btn btn-warning" value=" Usuario"  onclick="TestTable(); return false;">
-  </div>
-</div>
-
+        <div class="form-group row">
+          <div class="col-lg-3 text-center">
+            <input type="button" class="btn btn-warning" value=" Usuario"  onclick="TestTables(true); return false;">
+          </div>
+        </div>
+    </div>
 </asp:Content>

@@ -9,22 +9,14 @@ async function retrieveAll() {
 
     var x = document.getElementById("usersTable")
 
-
-    let dData = '{"usuario1":{ "id": "1", "nombre": "juan" },"usuario2":{ "id": "2", "nombre": "pedro" }}'
-
-    let a = JSON.parse(dData)
-
-    console.log(a)
-
-
-    for (obj in a) {
+    for (obj in returnedData) {
         let i = 0
         var row = document.createElement("tr")
-        console.log(a[obj])
-        for (let key in a[obj]) {
+        console.log(returnedData[obj])
+        for (let key in returnedData[obj]) {
             var cell = document.createElement("td")
             console.log(key)
-            cell.innerHTML = a[obj][key]
+            cell.innerHTML = returnedData[obj][key]
             row.append(cell)
         }
         var cell = document.createElement("td")
@@ -95,8 +87,9 @@ async function deleteUser(userID) {
 
 
 //Habilita los botones
+
 function enableAccess() {
-    let max = 2;
+    let max = 3;
     //let x = Array.from(localStorage.getItem('privileges'))
     //for (char in x) {
     //    if (char > max) {
@@ -115,7 +108,6 @@ function enableAccess() {
             document.getElementById('SuperAdmin').hidden = true
             break;
         case 3:
-            document.getElementById('Admin').hidden = true
             document.getElementById('User').hidden = true
             break;
     }

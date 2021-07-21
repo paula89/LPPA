@@ -34,10 +34,11 @@
             	   </div>
             	</div>
             	<a href="#">¿Olvidó su contraseña?</a>
-            	<input type="submit" class="btn" value="Login" onclick="location.replace('Default.aspx?user='+document.getElementById('usuario').value);  return false;"/>
+            	<input type="submit" class="btn" value="Login" onclick="login();  return false;"/>
             </form>
         </div>
     <script type="text/javascript" src="\Scripts\LPPA\LoginScript.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
    
 </body>
 </html>

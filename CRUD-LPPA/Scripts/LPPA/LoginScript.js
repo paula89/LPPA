@@ -69,14 +69,15 @@ function login() {
     let usuario = document.getElementById('usuario').value;
     let password = document.getElementById('password').value;
     console.log(usuario + password)
-    let response = validateInputs(usuario, password)
+    //let response = validateInputs(usuario, password)
+    let response = true
 
     if (response) {
-        location.replace("Default.aspx")
-        document.getElementById('userTitle').innerHTML = usuario;
+        location.replace("Default.aspx?user="+usuario )
+        
     }
     else {
-        alert("Mensaje de User/Psw erroneo")
+        Swal.fire('Mensaje de User/Psw erroneo')
     }
 }
 

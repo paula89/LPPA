@@ -146,7 +146,6 @@
     <Content Include="Scripts\LPPA\LoginScript.js" />
     <Content Include="Scripts\LPPA\main.js" />
     <Content Include="Scripts\LPPA\PrivilegesScript.js" />
-    <Content Include="Scripts\LPPA\Table.js" />
     <Content Include="Scripts\LPPA\UserScript.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />

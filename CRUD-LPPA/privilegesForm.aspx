@@ -3,6 +3,24 @@
 
     <link rel="stylesheet" type="text/css" href="/Content/styleUsersForm.css">
     <script type="text/javascript" src="./Scripts/LPPA/PrivilegesScript.js"></script>
+
+
+    <table class="table table-striped" id="usersTable">
+         <thread>
+            <tr id="usersAtributes">
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Email</th>
+                <th scope="col">Direccion</th>
+                <th scope="col">Privilegios</th>
+            </tr>
+        </thread>
+        <tbody id="rowContent">
+        </tbody>
+
+
+
     <div id="list" class="list">
   <ul>
     <li>Nombre</li>

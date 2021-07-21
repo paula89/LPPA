@@ -1,13 +1,13 @@
-﻿function TestTable() {
+﻿function TestTables(type) {
 
     var x = document.getElementById("usersTable")
 
 
-    let dData = '{"usuario1":{ "id": "1", "nombre": "juan" },"usuario2":{ "id": "2", "nombre": "pedro" }}'
+    let dData = '{"usuario1":{ "id": "1", "nombre": "juAan", "apellido": "flori", "email": "jflori@direccionn", "direccion":"BS As", "PRIVILEGIOS":"1234"}, "usuario2": { "id": "2", "nombre": "pedro", "apellido": "flori", "email": "jflori@direccionn", "direccion":"BS As", "PRIVILEGIOS":"1234"}}'
 
     let a = JSON.parse(dData)
 
-    console.log(a)
+    //console.log(a)
    
 
     for (obj in a) {
@@ -23,24 +23,26 @@
             //i++
             row.append(cell)
         }
-        var cell = document.createElement("td")
-        var botonM = document.createElement("input")
-        var botonD = document.createElement("input")
-        var div = document.createElement("div")
-        botonM.classList.add("btn","btn-outline-success")
-        botonD.classList.add("btn","btn-outline-danger")
-        botonM.type = "button"
-        botonD.type = "button"
-        botonM.innerHTML = "M"
-        botonD.innerHTML = "D"
-        botonM.addEventListener("click", function(e){ location.replace('manageUsersForm.aspx?user='+document.getElementById('userTitle').innerHTML+'&userID='+getID(e))})
-        botonD.addEventListener("click", confirmame)
-        div.class = "btn-group"
-        div.role = "group"
-        div.append(botonM)
-        div.append(botonD)
-        cell.append(div)
-        row.append(cell)
+        if (type == true) {
+            var cell = document.createElement("td")
+            var botonM = document.createElement("input")
+            var botonD = document.createElement("input")
+            var div = document.createElement("div")
+            botonM.classList.add("btn", "btn-outline-success")
+            botonD.classList.add("btn", "btn-outline-danger")
+            botonM.type = "button"
+            botonD.type = "button"
+            botonM.innerHTML = "M"
+            botonD.innerHTML = "D"
+            botonM.addEventListener("click", function (e) { location.replace('manageUsersForm.aspx?user=' + document.getElementById('userTitle').innerHTML + '&userID=' + getID(e)) })
+            botonD.addEventListener("click", confirmame)
+            div.class = "btn-group"
+            div.role = "group"
+            div.append(botonM)
+            div.append(botonD)
+            cell.append(div)
+            row.append(cell) 
+        }
         x.append(row)
     }
 

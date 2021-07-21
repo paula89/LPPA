@@ -1,6 +1,6 @@
 #bodySimulado {
     background-color: #eee;
-    color: #999;
+    color: BLACK;
     font-family: 'Poppins', sans-serif;
     display: flex;
     flex-direction: column;
@@ -98,4 +98,10 @@
 
 #usersAtributes {
     background-color: #38d39f;
+}
+
+
+#rowContent {
+    overflow: auto;
+    height: 70vh;
 }
