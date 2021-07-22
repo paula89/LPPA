@@ -29,7 +29,7 @@ namespace CRUD_LPPA
                 }
             }
 
-            usrID.Value = x;
+            usrsID.Value = x;
         }
     }
 }

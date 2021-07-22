@@ -15,17 +15,19 @@
 <script src="\Scripts\bootstrap.min.js"></script>
 <script type="text/javascript" src="\Scripts\LPPA\LoginScript.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 <link href="\Content\MasterStyle.css" rel="stylesheet" />
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script type="text/javascript" src="\Scripts\LPPA\UserScript.js"></script>
-    <script type="text/javascript" src="\Scripts\LPPA\ForTests.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript" src="\Scripts\LPPA\UserScript.js"></script>
+<script type="text/javascript" src="\Scripts\LPPA\ForTests.js"></script>
 
 
 </head>
 <body onload="enableAccess()">
 <form runat="server">
     <div class="container" id="FullPage">
-        <div class="row">
+        <div class="row" id="FullPageRow">
             <div class="col-sm-2" id="leftCol">
                 <div class="d-flex" id="wrapper">
                     <div id="sidebar-wrapper">

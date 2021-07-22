@@ -113,3 +113,9 @@ footer{
     height: 20px; 
 }
 
+#FullPageRow {
+    margin: 0px;
+    padding: 0px;
+    width: 100%
+}
+

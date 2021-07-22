@@ -14,7 +14,7 @@
 							<div class="form-group row">
 								<label  class="col-lg-3 col-form-label form-control-label">ID</label>
 								<div class="col-lg-9">
-									<input runat="server" class="form-control" type="text" id="usrID" disabled>
+									<input runat="server" class="form-control" type="text" id="usrsID" disabled>
 								</div>
 							</div>
 							<div class="form-group row">
@@ -50,23 +50,29 @@
 							<div class="form-group row">
 								<label class="col-lg-3 col-form-label form-control-label" >Contraseña</label>
 								<div class="col-lg-9">
-									<input class="form-control" type="password" id="contraseña">
+									<input class="form-control" type="password" id="password">
 								</div>
 							</div>
 							<div class="form-group row">
 								<label class="col-lg-3 col-form-label form-control-label" >Confirme la contraseña</label>
 								<div class="col-lg-9">
-									<input class="form-control" type="password" id="contraseña2">
+									<input class="form-control" type="password" id="password2">
 								</div>
 							</div>
 							<div class="form-group row">
 								<div class="col-lg-12 text-center">
-									<input type="reset" class="btn btn-secondary" value="Cancelar" onclick="locate.replace('seeUsersFormAdmin.aspx?user='+document.getElementById('userTitle').innerHTML); return false;">
-									<input type="button" class="btn btn-primary" value="Guardar" onclick="">
+									<input type="reset" class="btn btn-secondary" value="Cancelar" onclick="location.replace('seeUsersFormAdmin.aspx?user='+document.getElementById('userTitle').innerHTML); return false;">
+									<input type="button" class="btn btn-primary" value="Guardar" onclick="AltaModif(2);">
 								</div>
 							</div>
 					</div>
 				</div>
             </div>
+
+	<script>
+        window.onload = function () {
+            retrieveOne($("#usrsID").value);
+        };
+    </script>
 
 </asp:Content>
