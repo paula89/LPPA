@@ -3,7 +3,7 @@
     var x = document.getElementById("rowContent")
 
 
-    let dData = '{"usuario1":{ "id": "1", "nombre": "juAan", "apellido": "flori", "email": "jflori@direccionn", "direccion":"BS As", "PRIVILEGIOS":"1234"}, "usuario2": { "id": "2", "nombre": "pedro", "apellido": "flori", "email": "jflori@direccionn", "direccion":"BS As", "PRIVILEGIOS":"1234"}}'
+    let dData = '{"usuario1":{ "id": "1", "nombre": "juAan", "apellido": "flori", "email": "jflori@direccionn", "direccion":"BS As", "PRIVILEGIOS":"3"}, "usuario2": { "id": "2", "nombre": "pedro", "apellido": "flori", "email": "jflori@direccionn", "direccion":"BS As", "PRIVILEGIOS":"2"}}'
 
     let a = JSON.parse(dData)
 
@@ -88,6 +88,3 @@ function confirmame(type){
         }
     })
 }
-//cell.innerHTML = '<input type="button" class="btn btn - warning" value="Nuevo Usuario"  onclick="location.replace("addUserForm.aspx?user=" + document.getElementById("userTitle").innerHTML); return false;">'
-//var boton = document.createElement("input")
-//boton.

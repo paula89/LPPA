@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <link rel="stylesheet" type="text/css" href="/Content/styleUsersForm.css">
-    <script type="text/javascript" src="\Scripts\LPPA\ForTests.js"></script>
+    
 
     <div class="table-wrapper-scroll-y my-custom-scrollbar">
     <table class="table table-striped" id="usersTable" cellspacing="0";>
@@ -11,8 +11,6 @@
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Apellido</th>
-                <th>Email</th>
-                <th>Direccion</th>
                 <th>Privilegios</th>
                 <th>Acción</th>
             </tr>

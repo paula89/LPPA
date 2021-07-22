@@ -28,7 +28,34 @@ async function retrieveALL() {
         headers: '{{key:"' + localStorage.getItem("key") + '"}}'
 
     })
+
     let returnedData = response.json();
+}
+
+function rellenameLista(returnedData) {
+
+    $("#rowContent tr").remove();
+    var x = document.getElementById("rowContent")
+
+    for (obj in returnedData) {
+        var row = document.createElement("tr")
+        console.log(returnedData[obj])
+        for (let key in returnedData[obj]) {
+            var cell = document.createElement("td")
+            var input = document.createElement("input")
+            input.classList.add("form-control")
+            input.type = "text"
+            input.disabled = true
+            console.log(key)
+            input.value = a[obj][key]
+            cell.append(input)
+            row.append(cell)
+        }
+
+        x.append(actionButtons(1, row))
+    }
+
+    x.append(actionButtons(1, row))
 }
 
 async function createPrivilege(privilegeID, description) {
@@ -248,4 +275,11 @@ function confirmame(ID) {
 
         }
     })
+}
+
+
+function fillList() {
+
+
+
 }

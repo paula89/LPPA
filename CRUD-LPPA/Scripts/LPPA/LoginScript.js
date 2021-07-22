@@ -2,19 +2,22 @@
 
 
 async function loginRequest(userName, password) {
-    let response = await fetch('http://localhost:8000/login',{
+    let response = await fetch('http://localhost:8000/users/login',{
         method: 'POST', 
         body: '{{user:"'+userName+'",password:"'+password+'"}}'
     })
     let returnedData = response.json();
 
-    if (returnedData["key"] == '0' ){
+    if (returnedData == '0' ){
         return false
     }
     else{
-        localStorage.setItem("token",returnedData["key"])
-        localStorage.setItem("timeStamp", returnedData["timestamp"])
-        localStorage.setItem("privileges", returnedData["permisos"]["codigo"])
+        localStorage.setItem("token",returnedData["token"])
+        localStorage.setItem("timeStamp", returnedData["timeStamp"])
+        localStorage.setItem("privileges", '0')
+        for (i in returnedData["privileges"]) {
+            localStorage.setItem("privileges", localStorage.getItem("privileges")+i[id])
+        }
         return true
     }
 
@@ -55,13 +58,14 @@ function validateInputs(usuario, password) {
     if ((usuario || password === '' ? false : true)) {
         if (usuario.lenght || password.lenght <= 20 ? false : true) {
             return loginRequest(usuario, password)
+            
         }
         else {
-            return false
+            return null
         }
     }
     else {
-        return false
+        return null
     }
 }
 

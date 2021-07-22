@@ -1,6 +1,6 @@
 let localURL =  'http://localhost:8000/user'
 
-async function retrieveAll(type) {
+async function retrieveAll(type) {   //traigo todos los usr y los relleno en la tabla
     let response = await fetch(localURL,{
         headers: '{{key:"'+localStorage.getItem("key")+'"}}'
         
@@ -60,7 +60,7 @@ async function retrieveOne(userID) {
     }
 }
 
-async function createUser(userID,userdata) {
+async function createUser(userID,userdata) {       
     let response = await fetch(localURL + "/" +userID,{
         method: 'POST', //aclaro para que quede ordenado
         headers: '{{key:"'+localStorage.getItem("key")+'"}}',
@@ -121,7 +121,7 @@ function TestTables(type) {
     var x = document.getElementById("rowContent")
 
 
-    let dData = '{"usuario1":{ "id": "1", "nombre": "juAan", "apellido": "flori", "email": "jflori@direccionn", "direccion":"BS As", "PRIVILEGIOS":"1234"}, "usuario2": { "id": "2", "nombre": "pedro", "apellido": "flori", "email": "jflori@direccionn", "direccion":"BS As", "PRIVILEGIOS":"1234"}}'
+    let dData = '{"usuario1":{ "id": "1", "nombre": "juAan", "apellido": "flori" , "PRIVILEGIOS":"1234"}, "usuario2": { "id": "2", "nombre": "pedro", "apellido": "flori", "PRIVILEGIOS":"1234"}}'
 
     let a = JSON.parse(dData)
 
@@ -167,10 +167,6 @@ function TestTables(type) {
         x.append(row)
     }
 
-
-
-
-
 }
 
 //me trae el id de la primera row
@@ -182,7 +178,7 @@ function getID(e) {
 }
 
 
-//confirmacionDelete
+//confirmacion de Delete
 function confirmameDelete(type) {
     Swal.fire({
         title: 'Estas seguro que quiere eliminar al usuario?',
@@ -214,7 +210,7 @@ function AltaModif(accion){
 
 
 
-    let x = '{"nombre":' + document.getElementById("nombre").value + ',"apellido":' + document.getElementById("apellido").value + ',"email":' + document.getElementById("email").value + '"direccion":' + document.getElementById("direccion").value + ',"permisos":' + document.getElementById("privilegios").value + ',"password":' + document.getElementById("password").value + '}'
+    let x = '{"nombre":' + document.getElementById("nombre").value + ',"apellido":' + document.getElementById("apellido").value + ',"permisos":' + document.getElementById("privilegios").value + ',"password":' + document.getElementById("password").value + '}'
 
     if (accion == 1) {
         console.log($("#usrsID").value)
