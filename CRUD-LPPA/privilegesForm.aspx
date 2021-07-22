@@ -5,19 +5,42 @@
     <script type="text/javascript" src="./Scripts/LPPA/PrivilegesScript.js"></script>
 
 
-    <table class="table table-striped" id="usersTable">
-         <thread>
+<div class="table-wrapper-scroll-y my-custom-scrollbar">
+    <table class="table table-striped" id="permTable" cellspacing="0";>
+        <thead id="headContent">
             <tr id="usersAtributes">
-                <th scope="col">ID</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Email</th>
-                <th scope="col">Direccion</th>
-                <th scope="col">Privilegios</th>
+                <th>ID</th>
+                <th>Descripcion</th>
+                <th>Acción</th>
             </tr>
-        </thread>
+        </thead>
         <tbody id="rowContent">
         </tbody>
+    </table>
+    </div>
+    <div class="form-group row">
+          <div class="col-lg-3 text-center">
+            <input type="button" class="btn btn-warning" value="Nuevo Permiso"  onclick="">
+          </div>
+        </div>
+
+    <script>
+        $(document).ready(function(){
+            $('#usersTable').DataTable({
+                "scrollY": "50vh",
+                "scrollCollapse": true,
+                paging: false,
+                ordering: false,
+                searching: false,
+                info: false,
+                
+                
+            });
+            $(".dataTables_empty").empty();
+
+            TestTables(true)
+        })
+    </script>
 
 
 

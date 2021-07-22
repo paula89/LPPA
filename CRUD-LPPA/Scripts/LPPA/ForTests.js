@@ -31,12 +31,12 @@
             var botonM = document.createElement("input")
             var botonD = document.createElement("input")
             var div = document.createElement("div")
-            botonM.classList.add("btn", "btn-outline-success")
+            botonM.classList.add("btn", "btn-outline-warning")
             botonD.classList.add("btn", "btn-outline-danger")
             botonM.type = "button"
             botonD.type = "button"
-            botonM.innerHTML = "M"
-            botonD.innerHTML = "D"
+            botonM.value = "M"
+            botonD.value = "D"
             botonM.addEventListener("click", function (e) { location.replace('manageUsersForm.aspx?user=' + document.getElementById('userTitle').innerHTML + '&userID=' + getID(e)) })
             botonD.addEventListener("click", function () { confirmame(type)})
             div.class = "btn-group"

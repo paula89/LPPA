@@ -24,12 +24,12 @@ async function retrieveAll(type) {
         var botonM = document.createElement("input")
         var botonD = document.createElement("input")
         var div = document.createElement("div")
-        botonM.classList.add("btn", "btn-outline-success")
+        botonM.classList.add("btn", "btn-outline-warning")
         botonD.classList.add("btn", "btn-outline-danger")
         botonM.type = "button"
         botonD.type = "button"
-        botonM.innerHTML = "M"
-        botonD.innerHTML = "D"
+        botonM.value = "M"
+        botonD.value = "D"
         botonM.addEventListener("click", function (e) { location.replace('manageUsersForm.aspx?user=' + document.getElementById('userTitle').innerHTML + '&userID=' + getID(e)) })
         botonD.addEventListener("click", function () { confirmameDelete(type) })
         div.class = "btn-group"
@@ -90,7 +90,7 @@ async function deleteUser(userID) {
 //Habilita los botones
 
 function enableAccess() {
-    let max = 0;
+    let max = 3;
     //let x = Array.from(localStorage.getItem('privileges'))
     //for (char in x) {
     //    if (char > max) {
@@ -149,12 +149,12 @@ function TestTables(type) {
             var botonM = document.createElement("input")
             var botonD = document.createElement("input")
             var div = document.createElement("div")
-            botonM.classList.add("btn", "btn-outline-success")
+            botonM.classList.add("btn", "btn-outline-warning")
             botonD.classList.add("btn", "btn-outline-danger")
             botonM.type = "button"
             botonD.type = "button"
-            botonM.innerHTML = "M"
-            botonD.innerHTML = "D"
+            botonM.value = "M"
+            botonD.value = "D"
             botonM.addEventListener("click", function (e) { location.replace('manageUsersForm.aspx?user=' + document.getElementById('userTitle').innerHTML + '&userID=' + getID(e)) })
             botonD.addEventListener("click", function () { confirmameDelete(type) })
             div.class = "btn-group"
