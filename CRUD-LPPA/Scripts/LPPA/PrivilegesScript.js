@@ -11,7 +11,7 @@ async function requestGetallPrivileges() {
 
      
 }
-
+//genero un json con la lista de privilegios para evaluar/cargar en users
 function jsonForCreateModif(tipo) {
     requestGetallPrivileges().then(returnedData => {
 
@@ -52,7 +52,7 @@ function retrieveAllPrivileges() {
 
     })
 }
-
+//cargo checkboxes
 function rellenamelos(Descripcion, ID) {
     var label = document.createElement("label")
     var checkbox = document.createElement("input")
@@ -68,6 +68,7 @@ function rellenamelos(Descripcion, ID) {
 
 }
 
+//old carga
 function rellenameLista(returnedData) {
 
     $("#rowContent tr").remove();
@@ -107,7 +108,7 @@ async function modifyPrivilege(privilegeID, description) {
     let response = await fetch(localURLP + "/" + privilegeID, {
         method: 'PUT', //aclaro para que quede ordenado
         headers: { 'token': localStorage.getItem("token"), 'Content-Type': 'application / json' },
-        body: description // a definir
+        body: description
     })
     return response.json();
 }
@@ -120,6 +121,7 @@ async function deletePrivilege(privilegeID) {
     return response.json();
 }
 
+//creo row
 function addRow() {
     var x = document.getElementById("rowContent")
     var row = document.createElement("tr")
@@ -138,6 +140,7 @@ function addRow() {
     document.getElementById('newRowBtn').disabled = true
 }
 
+//cargo info en tabla
 function GenerateTablePriv() {
     $("#rowContent tr").remove();
     var x = document.getElementById("rowContent")
@@ -170,7 +173,7 @@ function GenerateTablePriv() {
     
 }
 
-
+//genero los botones de m y d
 function actionButtons(type, row1) {
     var cell = document.createElement("td")
     var botonC = document.createElement("input")
@@ -270,22 +273,22 @@ function modificar(e) {
 
 }
 
-
+//cancelar modificar
 function cancelarModify(e) {
 
-    GenerateHardcodeRow()
+    GenerateTablePriv()
 
     document.getElementById('newRowBtn').disabled = false
 }
 
-
+//confirmar modificar
 function confirmarModify(e) {
     var row = e.target.closest("tr")
 
     var ID = row.cells[0].getElementsByTagName('input')[0].value
     var DESC = row.cells[1].getElementsByTagName('input')[0].value
 
-    DESC = '{"Id":'+ID+',"Description":"' + DESC + '"}'
+    DESC = 'Privileges:[{"Id":"'+ID+'","Description":"' + DESC + '"}]'
 
     row.deleteCell(2)
 
