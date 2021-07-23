@@ -14,6 +14,7 @@ namespace CRUD_LPPA
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Response.Write("<script type='text/javascript'>function PageLoadLogin() {if (localStorage.getItem('timestamp') > Date.now()){}else{location.replace('Index.aspx')}}PageLoadLogin();</script>");
             
             if (Request.QueryString["user"] == "")
             {
@@ -24,13 +25,14 @@ namespace CRUD_LPPA
                 {
                     x = Request.QueryString["user"];
                 
-                if (x == Request.QueryString["user"])
-                {
-                    x = Request.QueryString["user"];
+                    if (x == Request.QueryString["user"])
+                    {
+                        x = Request.QueryString["user"];
+                    }
                 }
-                }
+                userTitle.InnerText = x;
             }
-            userTitle.InnerText = x;
+            
 
             //Intento de enmascarar
             //string url = Request.Url.ToString();  

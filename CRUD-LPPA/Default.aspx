@@ -17,7 +17,7 @@
                 Si quieres aprender mas sobre el uso de la web haga click en el boton debajo para acceder al manual.
             </p>
             <p>
-                <a class="btn btn-default" href="#">Manual &raquo;</a>
+                <a class="btn btn-default" href="./GCU-GUIDE.pdf" target="_blank">Manual &raquo;</a>
             </p>
         </div>
         <div class="col-md-4">
@@ -26,7 +26,7 @@
                 Si tienes interes en el desarrollo de esta web te dejo la documentación aqui abajo.
             </p>
             <p>
-                <a class="btn btn-default" href="#">Documentación &raquo;</a>
+                <a class="btn btn-default" href="/TPGRUPAL-LPPA-GCU.pdf" target="_blank">Documentación &raquo;</a>
             </p>
         </div>
         <div class="col-md-4">
@@ -35,7 +35,7 @@
                 Para mas informacion no dudes en contactarnos...
             </p>
             <p>
-                <a class="btn btn-default" href="#">Contactanos &raquo;</a>
+                <a class="btn btn-default" onclick="location.replace('Contact.aspx?user='+document.getElementById('userTitle').innerHTML);  return false;">Contactanos &raquo;</a>
             </p>
         </div>
     </div>

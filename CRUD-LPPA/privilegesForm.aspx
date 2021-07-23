@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <link rel="stylesheet" type="text/css" href="/Content/styleUsersForm.css">
-    <script type="text/javascript" src="./Scripts/LPPA/PrivilegesScript.js"></script>
+    <script type="text/javascript" src="/Scripts/LPPA/PrivilegesScript.js"></script>
 
 
 <div class="table-wrapper-scroll-y my-custom-scrollbar">
@@ -20,11 +20,13 @@
     </div>
     <div class="form-group row">
           <div class="col-lg-3 text-center">
-            <input type="button" class="btn btn-warning" value="Nuevo" id="newRowBtn" onclick="addRow();">
+            <input type="button" class="btn btn-warning createPrivBtn" value="Nuevo" id="newRowBtn" onclick="addRow();" disabled="disabled">
           </div>
         </div>
 
     <script>
+
+
         $(document).ready(function(){
             $('#usersTable').DataTable({
                 "scrollY": "50vh",
@@ -38,7 +40,8 @@
             });
             $(".dataTables_empty").empty();
 
-            GenerateHardcodeRow()
+            GenerateTablePriv()
+            
         })
     </script>
 

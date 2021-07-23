@@ -2,25 +2,14 @@
 
 
 async function loginRequest(userName, password) {
-    let response = await fetch('http://localhost:8000/users/login',{
+    let response = await fetch('https://localhost:44307/user/LogIn', {
+        
         method: 'POST', 
-        body: '{{user:"'+userName+'",password:"'+password+'"}}'
+        body: '{"UserName":"' + userName + '","Password":"' + password + '"}',
+        headers: { 'Content-Type': 'application/json' }
     })
-    let returnedData = response.json();
 
-    if (returnedData == '0' ){
-        return false
-    }
-    else{
-        localStorage.setItem("token",returnedData["token"])
-        localStorage.setItem("timeStamp", returnedData["timeStamp"])
-        localStorage.setItem("privileges", '0')
-        for (i in returnedData["privileges"]) {
-            localStorage.setItem("privileges", localStorage.getItem("privileges")+i[id])
-        }
-        return true
-    }
-
+    return response.json()
 }
 
 
@@ -55,33 +44,29 @@ inputs.forEach(input => {
 
 function validateInputs(usuario, password) {
 
-    if ((usuario || password === '' ? false : true)) {
-        if (usuario.lenght || password.lenght <= 20 ? false : true) {
-            return loginRequest(usuario, password)
-            
+    loginRequest(usuario, password).then(returnedData => {
+
+        if (returnedData == '0') {
+            Swal.fire('Usuario o Clave erronea')
         }
         else {
-            return null
+            var priv = ""
+            localStorage.setItem("token", returnedData["Token"])
+            localStorage.setItem("timeStamp", returnedData["TimeStamp"])
+            for (i in returnedData["Privileges"]) {
+                priv += returnedData["Privileges"][i]['Id'] + ","
+            }
+            localStorage.setItem("privileges", priv)
+            location.replace("Default.aspx?user=" + usuario)
         }
-    }
-    else {
-        return null
-    }
+    })
 }
 
 function login() {
     let usuario = document.getElementById('usuario').value;
     let password = document.getElementById('password').value;
     console.log(usuario + password)
-    //let response = validateInputs(usuario, password)
-    let response = true
-
-    if (response) {
-        location.replace("Default.aspx?user="+usuario )
-        
-    }
-    else {
-        Swal.fire('Mensaje de User/Psw erroneo')
-    }
+    validateInputs(usuario, password)
+    
 }
 

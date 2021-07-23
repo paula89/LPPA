@@ -9,9 +9,7 @@
         <thead id="headContent">
             <tr id="usersAtributes">
                 <th>ID</th>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Privilegios</th>
+                <th>Username</th>
                 <th>Acción</th>
             </tr>
         </thead>
@@ -21,7 +19,7 @@
     </div>
     <div class="form-group row">
           <div class="col-lg-3 text-center">
-            <input type="button" class="btn btn-warning" value="Nuevo Usuario"  onclick="location.replace('addUserForm.aspx?user='+document.getElementById('userTitle').innerHTML); return false;">
+            <input type="button" class="btn btn-warning createUserBtn" value="Nuevo Usuario"  onclick="location.replace('addUserForm.aspx?user='+document.getElementById('userTitle').innerHTML); return false;" disabled="disabled">
           </div>
         </div>
 
@@ -39,7 +37,9 @@
             });
             $(".dataTables_empty").empty();
 
-            TestTables(true)
+            retieveALL(true)
+
+            evalAccessUser()
         })
     </script>
 </asp:Content>

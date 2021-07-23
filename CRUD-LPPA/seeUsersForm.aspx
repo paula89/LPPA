@@ -10,9 +10,7 @@
         <thead id="headContent">
             <tr id="usersAtributes">
                 <th>ID</th>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Privilegios</th>
+                <th>Username</th>
             </tr>
         </thead>
         <tbody id="rowContent">
@@ -35,7 +33,9 @@
             });
             $(".dataTables_empty").empty();
 
-            TestTables(false)
+            retieveALL(false)
+
+            evalAccessUser()
         })
         </script>
 </asp:Content>

@@ -12,6 +12,7 @@ namespace CRUD_LPPA
         string x = "";
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Response.Write("<script type='text/javascript'>function PageLoadLogin() {if (localStorage.getItem('timestamp') > Date.now()){}else{location.replace('Index.aspx')}}PageLoadLogin();</script>");
             if (Request.QueryString["userID"] == "")
             {
 
@@ -27,9 +28,10 @@ namespace CRUD_LPPA
                         x = Request.QueryString["userID"];
                     }
                 }
+                id.Value = x;
             }
 
-            usrsID.Value = x;
+            
         }
     }
 }

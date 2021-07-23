@@ -20,11 +20,10 @@
 <link href="\Content\MasterStyle.css" rel="stylesheet" />
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="text/javascript" src="\Scripts\LPPA\UserScript.js"></script>
-<script type="text/javascript" src="\Scripts\LPPA\ForTests.js"></script>
 
 
 </head>
-<body onload="enableAccess()">
+<body>
 <form runat="server">
     <div class="container" id="FullPage">
         <div class="row" id="FullPageRow">
@@ -34,9 +33,9 @@
                         <div runat="server" class="sidebar-heading" id="userTitle">USUARIO</div>
                         <div class="list-group list-group-flush">
                             <a runat="server" onclick="location.replace('Default.aspx?user='+document.getElementById('userTitle').innerHTML); return false;" class="list-group-item list-group-item-action" >Inicio</a>
-                            <a runat="server" id="User" onclick="location.replace('seeUsersForm.aspx?user='+document.getElementById('userTitle').innerHTML);  return false;" class="list-group-item list-group-item-action" >Users</a>
-                            <a runat="server" id="Admin" onclick="location.replace('seeUsersFormAdmin.aspx?user='+document.getElementById('userTitle').innerHTML); return false;" class="list-group-item list-group-item-action" >Users</a>
-                            <a runat="server" id="SuperAdmin" onclick="location.replace('privilegesForm.aspx?user='+document.getElementById('userTitle').innerHTML);  return false;" class="list-group-item list-group-item-action" >Privilegios</a>
+                            <a runat="server" id="User" onclick="location.replace('seeUsersForm.aspx?user='+document.getElementById('userTitle').innerHTML);  return false;" class="list-group-item list-group-item-action" hidden>Users</a>
+                            <a runat="server" id="Admin" onclick="location.replace('seeUsersFormAdmin.aspx?user='+document.getElementById('userTitle').innerHTML); return false;" class="list-group-item list-group-item-action" hidden>Users</a>
+                            <a runat="server" id="SuperAdmin" onclick="location.replace('privilegesForm.aspx?user='+document.getElementById('userTitle').innerHTML);  return false;" class="list-group-item list-group-item-action" hidden>Privilegios</a>
                         </div>
 
                         <button type="button" class="btn btn-md" id="LogoutBtn" onclick="logout();">Logout</button>
@@ -58,7 +57,14 @@
 </form>
 
 
-
+        <script>
+        $(document).ready(function(){
+            evalToken()
+            enableAccess()
+            
+            
+        })
+        </script>
     
 </body>
 </html>

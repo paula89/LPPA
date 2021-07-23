@@ -1,35 +1,71 @@
 
-//function addRow(){
-//    document.getElementById('list').innerHTML += 
-//`
-//    <ul>
-//    <li data-label="nombre">
-//        <input value="" />
-//    </li>
-//    <li data-label="descripcion">
-//        <input value=""/>
-//    </li>
-//    <li data-label="accion">
-//        <i class="fas fa-edit" onclick="document.getElementById('nameInput').removeAttribute('disabled')"></i>
+let localURLP = 'https://localhost:44307/privilege'
 
-//        <i class="far fa-check-circle" onclick="modificarPrivilegio() ? alert('Privilegio modificado con exito') : alert('Ha ocurrido un error')" ></i>
-
-//        <i class="fas fa-trash-alt" onclick="return confirm('¿Desea eliminar el privilegio seleccionado?')"></i>
-//    </li>
-//  </ul>  
-//`
-
-//}
-
-let localURLP = 'http://localhost:8000/privileges'
-
-async function retrieveALL() {
-    let response = await fetch(localURL, {
-        headers: '{{key:"' + localStorage.getItem("key") + '"}}'
+async function requestGetallPrivileges() {
+    let response = await fetch(localURLP, {
+        headers: { 'token': localStorage.getItem("token"), 'Content-Type': 'application / json' }
 
     })
 
-    let returnedData = response.json();
+    return response.json();
+
+     
+}
+
+function jsonForCreateModif(tipo) {
+    requestGetallPrivileges().then(returnedData => {
+
+        var privJson = 'Privileges":['
+
+        for (obj in returnedData) {
+
+            var check = document.getElementById(returnedData[obj]["Id"])
+
+            if (check.checked) {
+                privJson +=   '{"id":' + returnedData[obj]["Id"] + ',"Description":"' + returnedData[obj]["Description"]+'"},'
+            }
+
+        }
+
+
+        privJson = privJson.slice(0, privJson.length - 1);
+
+        privJson += ']'
+
+        if (tipo == "alta") {
+            CreameEste(privJson)
+        }
+        else if (tipo == "modif") {
+            ModficameEste(privJson)
+        }
+        
+
+    })
+}
+
+function retrieveAllPrivileges() {
+    requestGetallPrivileges().then(returnedData => {
+
+        for (obj in returnedData) {
+            rellenamelos(returnedData[obj]["Description"], returnedData[obj]["Id"]) 
+        }
+
+    })
+}
+
+function rellenamelos(Descripcion, ID) {
+    var label = document.createElement("label")
+    var checkbox = document.createElement("input")
+    label.htmlFor = ID
+    label.fo
+    checkbox.id = ID
+    checkbox.type = "checkbox"
+    label.innerHTML = Descripcion
+    label.append(checkbox)
+    var x = document.getElementById("checkboxes")
+    x.append(label)
+
+
 }
 
 function rellenameLista(returnedData) {
@@ -58,30 +94,30 @@ function rellenameLista(returnedData) {
     x.append(actionButtons(1, row))
 }
 
-async function createPrivilege(privilegeID, description) {
-    let response = await fetch(localURLP + "/" + privilegeID, {
+async function createPrivilege(description) {
+    let response = await fetch(localURLP, {
         method: 'POST', //aclaro para que quede ordenado
-        headers: '{{key:"' + localStorage.getItem("key") + '"}}',
+        headers: { 'token': localStorage.getItem("token"), 'Content-Type': 'application / json' },
         body: description // a definir
     })
-    let returnedData = response.json();
+    return response;
 }
 
 async function modifyPrivilege(privilegeID, description) {
     let response = await fetch(localURLP + "/" + privilegeID, {
         method: 'PUT', //aclaro para que quede ordenado
-        headers: '{{key:"' + localStorage.getItem("key") + '"}}',
+        headers: { 'token': localStorage.getItem("token"), 'Content-Type': 'application / json' },
         body: description // a definir
     })
-    let returnedData = response.json();
+    return response.json();
 }
 
 async function deletePrivilege(privilegeID) {
     let response = await fetch(localURLP + "/" + privilegeID, {
         method: 'DELETE', //aclaro para que quede ordenado
-        headers: '{{key:"' + localStorage.getItem("key") + '"}}',
+        headers: { 'token': localStorage.getItem("token"), 'Content-Type': 'application / json' },
     })
-    let returnedData = response.json();
+    return response.json();
 }
 
 function addRow() {
@@ -95,37 +131,43 @@ function addRow() {
         cell.append(input)
         row.append(cell)
     }
+    row.cells[0].querySelector('input').readOnly = true
     
     x.append(actionButtons(2, row))
 
     document.getElementById('newRowBtn').disabled = true
 }
 
-function GenerateHardcodeRow() {
+function GenerateTablePriv() {
     $("#rowContent tr").remove();
-
-    let dData = '{"permiso1":{ "id": "0", "descripcion": "Lectura"}, "permiso2": { "id": "1", "descripcion": "Create"}, "permiso3": { "id": "2", "descripcion": "Modify"}, "permiso4": { "id": "3", "descripcion": "Delete"}}'
-    let a = JSON.parse(dData)
-
     var x = document.getElementById("rowContent")
 
-    for (obj in a) {
-        var row = document.createElement("tr")
-        console.log(a[obj])
-        for (let key in a[obj]) {
-            var cell = document.createElement("td")
-            var input = document.createElement("input")
-            input.classList.add("form-control")
-            input.type = "text"
-            input.disabled = true
-            console.log(key)
-            input.value = a[obj][key]
-            cell.append(input)
-            row.append(cell)
-        }
+    requestGetallPrivileges().then(returnedData => {
 
-        x.append(actionButtons(1,row))
-    }
+        for (obj in returnedData) {
+            var row = document.createElement("tr")
+
+            for (let key in returnedData[obj]) {
+                var cell = document.createElement("td")
+                var input = document.createElement("input")
+                input.classList.add("form-control")
+                input.type = "text"
+                input.disabled = true
+                console.log(key)
+                input.value = returnedData[obj][key]
+                cell.append(input)
+                row.append(cell)
+            }
+
+            x.append(actionButtons(1, row))
+        }
+        evalAccessPriv()
+
+    })
+
+    
+
+    
 }
 
 
@@ -148,6 +190,10 @@ function actionButtons(type, row1) {
     if (type == 1) {
         botonC.hidden = true
         botonM.hidden = false
+        botonM.disabled = true
+        botonD.disabled = true
+        botonM.classList.add("modifyPrivBtn")
+        botonD.classList.add("deletePrivBtn")
         botonM.addEventListener("click", function (e) { modificar(e) })
         botonD.addEventListener("click", function (e) { borrar(e) })
     }
@@ -159,8 +205,6 @@ function actionButtons(type, row1) {
         botonD.addEventListener("click", function (e) { cancelarModify(e) })
         botonC.addEventListener("click", function (e) { confirmarModify(e) })
     }
-    //
-    //
     div.class = "btn-group"
     div.role = "group"
     div.append(botonC)
@@ -188,22 +232,34 @@ function confirmarCreacion(e) {
     var ID = row.cells[0].getElementsByTagName('input')[0].value
     var DESC = row.cells[1].getElementsByTagName('input')[0].value
 
-    row.deleteCell(2)
+    DESC = '{"Description":"' + DESC+'"}'
 
-    row.append(actionButtons(1, row).cells[2])
-
-    //createPrivilege(ID,DESC)  creo privilegio
-
-    row.cells[0].getElementsByTagName('input')[0].disabled = true
-    row.cells[1].getElementsByTagName('input')[0].disabled = true
-
-    document.getElementById('newRowBtn').disabled = false
+    createPrivilege(DESC).then(response => { 
+        if (response["status"] == 200) {
+            row.deleteCell(2)
+            row.append(actionButtons(1, row).cells[2])
+            row.cells[0].getElementsByTagName('input')[0].disabled = true
+            row.cells[1].getElementsByTagName('input')[0].disabled = true
+            document.getElementById('newRowBtn').disabled = false
+            Swal.fire(
+                'Privilegio creado'
+            ).then((result) => {
+                if (result.isConfirmed) {
+                    GenerateTablePriv()
+                }
+            })
+        }
+        else  {
+            Swal.fire(
+                'Hubo un error'
+            )
+        }
+    })
 }
 
 function modificar(e) {
 
     var row = e.target.closest("tr")
-    row.cells[0].getElementsByTagName('input')[0].disabled = false
     row.cells[1].getElementsByTagName('input')[0].disabled = false
 
     document.getElementById('newRowBtn').disabled = true
@@ -229,16 +285,34 @@ function confirmarModify(e) {
     var ID = row.cells[0].getElementsByTagName('input')[0].value
     var DESC = row.cells[1].getElementsByTagName('input')[0].value
 
+    DESC = '{"Id":'+ID+',"Description":"' + DESC + '"}'
+
     row.deleteCell(2)
 
     row.append(actionButtons(1, row).cells[2])
 
-    //modifyPrivilege(ID,DESC)  modifico privilegio
+    modifyPrivilege(ID,DESC).then(response => { 
+    if (response == 1) {
+        row.deleteCell(2)
 
-    row.cells[0].getElementsByTagName('input')[0].disabled = true
-    row.cells[1].getElementsByTagName('input')[0].disabled = true
-
-    document.getElementById('newRowBtn').disabled = false
+        row.append(actionButtons(1, row).cells[2])
+        row.cells[0].getElementsByTagName('input')[0].disabled = true
+        row.cells[1].getElementsByTagName('input')[0].disabled = true
+        document.getElementById('newRowBtn').disabled = false
+        Swal.fire(
+            'Privilegio creado'
+        ).then((result) => {
+            if (result.isConfirmed) {
+                GenerateTablePriv()
+            }
+        })
+    }
+    else if (response == 0) {
+        Swal.fire(
+            'Hubo un error'
+        )
+    }
+})
 }
 
 function borrar(e) {
@@ -263,23 +337,30 @@ function confirmame(ID) {
     }).then((result) => {
         if (result.isConfirmed) {
 
-            //deletePrivilege(ID)
-            Swal.fire(
-                'Borrado!',
+            deletePrivilege(ID).then(response => {
+                if (response == 1) {
+                    Swal.fire(
+                        'Privilegio Borrado!',
 
-            ).then((result) => {
-                if (result.isConfirmed) {
-                    GenerateHardcodeRow() //originalmente tendria que repoblaR
+                    ).then((result) => {
+                        if (result.isConfirmed) {
+                            GenerateTablePriv()
+                        }
+                    })
+                }
+                else if (response == 0){
+                    Swal.fire(
+                        'Hubo un error al borrar el Privilegio!',
+
+                    ).then((result) => {
+                        if (result.isConfirmed) {
+                            GenerateTablePriv()
+                        }
+                    })
                 }
             })
+            
 
         }
     })
-}
-
-
-function fillList() {
-
-
-
 }
