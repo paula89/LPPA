@@ -38,8 +38,8 @@
             $(".dataTables_empty").empty();
 
             retieveALL(true)
-
-            evalAccessUser()
+            
+            
         })
     </script>
 </asp:Content>
