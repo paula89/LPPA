@@ -33,7 +33,7 @@
            		    	<input id="password" type="password" class="input" required oninvalid="this.setCustomValidity('Debe ingresar su contraseña')" oninput="this.setCustomValidity('')"/>
             	   </div>
             	</div>
-            	<%--<a href="#">¿Olvidó su contraseña?</a>--%>
+            	<a href="#">¿Olvidó su contraseña?</a>
             	<input type="submit" class="btn" value="Login" onclick="login();  return false;"/>
             </form>
         </div>

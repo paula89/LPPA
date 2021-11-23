@@ -35,7 +35,7 @@
 
             retieveALL(false)
 
-            
+            evalAccessUser()
         })
         </script>
 </asp:Content>

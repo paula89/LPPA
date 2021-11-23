@@ -22,7 +22,7 @@ function jsonForCreateModif(tipo) {
             var check = document.getElementById(returnedData[obj]["Id"])
 
             if (check.checked) {
-                privJson +=   '{"Id":' + returnedData[obj]["Id"] + ',"Description":"' + returnedData[obj]["Description"]+'"},'
+                privJson +=   '{"id":' + returnedData[obj]["Id"] + ',"Description":"' + returnedData[obj]["Description"]+'"},'
             }
 
         }
@@ -104,8 +104,8 @@ async function createPrivilege(description) {
     return response;
 }
 
-async function modifyPrivilege(description) {
-    let response = await fetch(localURLP, {
+async function modifyPrivilege(privilegeID, description) {
+    let response = await fetch(localURLP + "/" + privilegeID, {
         method: 'PUT', //aclaro para que quede ordenado
         headers: { 'token': localStorage.getItem("token"), 'Content-Type': 'application / json' },
         body: description
@@ -288,13 +288,13 @@ function confirmarModify(e) {
     var ID = row.cells[0].getElementsByTagName('input')[0].value
     var DESC = row.cells[1].getElementsByTagName('input')[0].value
 
-    DESC = '{"Id":'+ID+',"Description":"' + DESC + '"}'
+    DESC = 'Privileges:[{"Id":"'+ID+'","Description":"' + DESC + '"}]'
 
     row.deleteCell(2)
 
     row.append(actionButtons(1, row).cells[2])
 
-    modifyPrivilege(DESC).then(response => { 
+    modifyPrivilege(ID,DESC).then(response => { 
     if (response == 1) {
         row.deleteCell(2)
 
@@ -303,7 +303,7 @@ function confirmarModify(e) {
         row.cells[1].getElementsByTagName('input')[0].disabled = true
         document.getElementById('newRowBtn').disabled = false
         Swal.fire(
-            'Privilegio Modificado'
+            'Privilegio creado'
         ).then((result) => {
             if (result.isConfirmed) {
                 GenerateTablePriv()

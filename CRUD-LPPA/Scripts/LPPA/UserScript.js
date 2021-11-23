@@ -31,7 +31,7 @@ function retieveALL(type) {
                 var botonD = document.createElement("input")
                 var div = document.createElement("div")
                 botonM.classList.add("btn", "btn-outline-warning","modifyUserBtn")
-                botonD.classList.add("btn", "btn-outline-danger","deleteUserBtn")
+                botonD.classList.add("btn", "btn-outline-danger","deleteUsersBtn")
                 botonM.type = "button"
                 botonD.type = "button"
                 botonM.value = "M"
@@ -48,7 +48,6 @@ function retieveALL(type) {
                 row.append(cell)
             }
             x.append(row)
-            evalAccessUser()
 
         }
     })
@@ -129,8 +128,8 @@ function CreameEste(priv) {
   
 }
 
-async function modifyUser(userdata) {
-    let response = await fetch(localURL,{
+async function modifyUser(userID, userdata) {
+    let response = await fetch(localURL + "/" +userID,{
         method: 'PUT', //aclaro para que quede ordenado
         headers: { 'token': localStorage.getItem("token"), 'Content-Type': 'application / json' },
         body: userdata 
@@ -142,9 +141,9 @@ async function modifyUser(userdata) {
 //genero jason y llamo segun un valor
 function ModficameEste(priv) {
     if (checkPSW()) {
-        let x = '{"Id":' + document.getElementById("MainContent_id").value+',"Username":"' + document.getElementById("Username").value + '","Salt":"' + document.getElementById("Salt").value + '","' + priv + ',"Password":"' + document.getElementById("password").value + '"}'
+        let x = '{"Username":"' + document.getElementById("Username").value + '","Salt":"' + document.getElementById("Salt").value + '","' + priv + ',"Password":"' + document.getElementById("password").value + '"}'
 
-        modifyUser(x).then(response => {
+        modifyUser(document.getElementById("MainContent_id").value, x).then(response => {
                 if (response == 0) {
                     Swal.fire(
                         'Hubo un error'
@@ -261,15 +260,15 @@ function enableAccess() {
                 document.getElementById('Admin').hidden = false
                 document.getElementById('User').hidden = true
                 break;
-            case "4"://super admin
-                document.getElementById('User').hidden = true
-                document.getElementById('Admin').hidden = false     
-                break;
             case "5"://super admin
+                document.getElementById('User').hidden = true
+                document.getElementById('Admin').hidden = false
                 document.getElementById('SuperAdmin').hidden = false
                 break;
         }
     }
+
+    
 }
 
 // recivo un id de privilegio y evalua si lo tiene
@@ -282,12 +281,6 @@ function evalAccessUser() {
        switch (priviliges[x]) {
            case "2": //create usr
                document.querySelector('.createUserBtn').removeAttribute('disabled')
-               break;
-           case "3": //modify usr
-               buscarBoton('.modifyUserBtn')
-               break;
-           case "4"://delete usr
-               buscarBoton('.deleteUserBtn')
                break;
 
        }
@@ -323,7 +316,7 @@ function evalAccessPriv() {
 function buscarBoton(str) {
     content = document.getElementById('rowContent')
     
-    var tds = document.querySelectorAll('table tbody tr')
+    var tds = document.querySelectorAll('#permTable tbody tr')
     for (i = 0; i < tds.length; ++i) {
         content.rows[i].cells[2].querySelector(str).removeAttribute('disabled')
     }
@@ -411,4 +404,11 @@ function getID(e) {
 
     return row1.cells[0].innerHTML
 }
+
+
+
+
+
+
+
 
